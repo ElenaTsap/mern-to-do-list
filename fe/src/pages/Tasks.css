@@ -1,0 +1,44 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.app-container > h1 {
+  text-align: center;
+  padding: 80px;
+}
+
+.input-container {
+    margin-bottom: 4%;
+    width: 50%;
+    display: flex;
+    height: 50px;
+  }
+  
+  .input-container > input {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: none;
+  }
+  
+  .input-container > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(150, 150, 150);
+    border: none;
+    width: 50px;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+  }
+  
+  .input-container > button:hover {
+    background-color: rgb(0, 47, 255);
+    border: none;
+  }
