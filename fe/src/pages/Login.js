@@ -23,10 +23,16 @@ export default function (props) {
 
         fetch(urlLogin, options)
         .then(result => result.json()
-        .then(output=>{
-            console.log(output.message);
-            localStorage.setItem('token', output.token);
-            history.push('/tasks');
+        .then(output => {
+            console.log(output);
+            if (output.status === 'success') {
+                console.log(output.message);
+                localStorage.setItem('token', output.token);
+                history.push('/tasks');
+            } else {
+                alert(output.status);
+            }
+
         }))
     }
     
