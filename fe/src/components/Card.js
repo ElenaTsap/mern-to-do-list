@@ -11,11 +11,16 @@ const Card = ({ task, tasks, setTasks}) => {
 
     const deleteTask = (id) => {
         const url ='http://localhost:8060/tasks/'+id;
+        const headers = {
+            'Content-Type': 'application/json',
+            'x-auth-token': localStorage.getItem('token')
+        }
         const options = {
         method: 'DELETE',
+        headers
         }
 
-        setDeleted(!deleted);
+        setDeleted(true);
 
         setTimeout(() => {
             fetch(url, options)
@@ -23,12 +28,12 @@ const Card = ({ task, tasks, setTasks}) => {
             const newList = tasks.filter(task => task._id !== output.data);
             setTasks(newList);
             }));
-        }, 800);
+        }, 600);
     } 
 
     const editCheckHandler = (e) => {
         console.log('input', e);
-        if (e.charCode == 13 && isEditable) {
+        if (e.charCode === 13 && isEditable) {
             e.preventDefault();
             //setIsEditable(false)
         }

@@ -1,19 +1,32 @@
 import Tasks from './pages/Tasks'
-import Auth from './pages/Auth'
+import Register from './pages/Register'
+import Login from './pages/Login'
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
 
   return (
     <Switch>
-      <Route path="/auth">
-        <Auth/>
+      <Route 
+        exact
+        path='/register'
+      >
+        <Register/>
       </Route>
+
+      <Route 
+        exact
+        path='/login'
+      >
+        <Login/>
+      </Route>
+
       <Route path="/tasks">
         <Tasks/>
       </Route>
+
       <Route path="/">
-        <Auth/>
+        <Tasks/>
       </Route>
     </Switch>
   );

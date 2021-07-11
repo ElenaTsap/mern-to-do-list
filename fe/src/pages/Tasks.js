@@ -9,7 +9,7 @@ function Tasks() {
 
     useEffect(() => {
         if (!localStorage.getItem('token')) {
-            history.push('/auth');
+            history.push('/login');
         }
     })
 
@@ -84,9 +84,23 @@ function Tasks() {
         )
     }
 
+    const logOut = () => {
+        if (window.confirm('Are you sure you want to logout?')) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('current-user');
+            history.push('/login');
+        } 
+    }
+
     return (
         <div className='app-container'>
             <h1>My MERN to-do list</h1>
+            <div 
+                    onClick = {logOut}
+                    className = "logout-btn"
+                >
+                    logout
+                </div>
             <form className="input-container" onSubmit = {taskSubmitHandler}>
                 <input  placeholder="add a task" 
                         required
