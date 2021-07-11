@@ -1,0 +1,25 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "a simple mern todo list",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm start --prefix be\" \"npm start --prefix fe\" ",
+    "frontend-install": "npm install --prefix fe",
+    "frontend": "npm start --prefix fe",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix be && npm install --prefix fe && npm run build --prefix fe"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElenaTsap/mern-to-do-list.git"
+  },
+  "author":  "ELena T",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElenaTsap/mern-to-do-list/issues"
+  },
+  "homepage": "https://github.com/ElenaTsap/mern-to-do-list#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
