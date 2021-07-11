@@ -24,7 +24,7 @@ export default function (props) {
         fetch(urlLogin, options)
         .then(result => result.json()
         .then(output=>{
-            alert(output.message);
+            console.log(output.message);
             localStorage.setItem('token', output.token);
             history.push('/tasks');
         }))
@@ -32,22 +32,22 @@ export default function (props) {
     
 
     return (
-        <div className='wrapper'>
-            <form onSubmit = {submitHandler}>
-                <h2>Login</h2>
-                <input name = "email" type = "email"/>
-                <input name = "pass" type ="password"/>
-                <section>
-                    <input id ="login" type = "submit" value ="Login"/>
-                </section>
-                <h4>new user?  &nbsp; 
-                <NavLink 
-                        exact
-                        to = "/register"
-                    >
-                        Register
-                </NavLink></h4>
-            </form>
-        </div>
+            <div className='wrapper'>
+                <form onSubmit = {submitHandler}>
+                    <h2>Login to your TODO list</h2>
+                    <input name = "email" type = "email"/>
+                    <input name = "pass" type ="password"/>
+                    <section>
+                        <input id ="login" type = "submit" value ="Login"/>
+                    </section>
+                    <h4>new user?  &nbsp; 
+                    <NavLink 
+                            exact
+                            to = "/register"
+                        >
+                            Register
+                    </NavLink></h4>
+                </form>
+            </div>
     )
 }

@@ -31,7 +31,7 @@ export default function (props) {
     return (
         <div className='wrapper'>
             <form onSubmit = {submitHandler}>
-                <h2>Register</h2>
+                <h2>Register to my simple TODO list</h2>
                 <input name = "email" type = "email"/>
                 <input name = "pass" type ="password"/>
                 <section>
